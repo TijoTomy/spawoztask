@@ -1,0 +1,15 @@
+img{
+    width: 200px;
+    height: 200px;
+}
+.productcontainer{
+    padding-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.productcontainer h6,.productcontainer p{
+    text-align: center;
+}

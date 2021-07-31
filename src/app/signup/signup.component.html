@@ -1,0 +1,94 @@
+<div class="signuppage">
+    <div class="loginform">
+        <div>
+            <h4>Sign Up</h4>
+        </div>
+      
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-12">
+                        <label for="first-name"class=" control-label"> Name </label>
+                        <input class="form-control form-control-sm" formControlName="name" type="text" placeholder="enter name">   
+                    </div>
+                       
+                    </div>
+                    <div *ngIf="submitted&&f.name.errors&&f.name.errors.required" class="Error class "><small>enter name</small> </div>            
+              <div class="row">
+                  <div class="col-md-12">
+                    <label for="last-name" class=" control-label">Email</label>
+                    <input class="form-control form-control-sm"formControlName="email" type="text" placeholder="enter email"> 
+                  </div>
+                 
+              </div>
+              <div *ngIf="submitted&&f.email.errors&&f.email.errors.required" class="Error class "><small>enter email</small> </div>            
+
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="last-name" class=" control-label">Password</label>
+                  <input class="form-control form-control-sm"formControlName="password" type="text" placeholder="password"> 
+                </div>
+               
+            </div>
+            <div *ngIf="submitted&&f.password.errors&&f.password.errors.required" class="Error class "><small>enter password</small> </div>            
+            <h6>Address</h6>
+            <div class="mt-2" formGroupName="address">
+             
+            <div class="row">
+                <div class="col-md-12">
+                  <label for="last-name" class=" control-label">phone</label>
+                  <input class="form-control form-control-sm"formControlName="phone" type="text" placeholder="enter phone"> 
+                </div>
+               
+            </div>
+            <div *ngIf="submitted&&!loginForm.value.address.phone"class="Error class "><small>enter phone</small> </div>            
+
+            <div class="row">
+                <div class="col-md-12">
+                  <label for="last-name" class=" control-label">Pincode</label>
+                  <input class="form-control form-control-sm"formControlName="pincode" type="text" placeholder="enter pincode"> 
+                </div>
+               
+            </div>
+            </div>
+            <div *ngIf="submitted&&!loginForm.value.address.pincode"class="Error class "><small>enter pincode</small> </div>            
+
+            <!-- <div class="row">
+                <div class="col-md-12">
+                  <label for="last-name" class=" control-label">Shipping Adress</label>
+                  <input class="form-control form-control-sm"formControlName="shipadrs" type="text" placeholder="password"> 
+                </div>
+               
+            </div> -->
+            <div formArrayName="shipadrs" class="adressbtn">
+                <div class="row">
+                    <div class="col-md-12">
+                <button type="button" class="btn btn-info btn-sm mt-2 " (click)="onAddShipAdrs()">add address</button>  
+
+</div>
+<div  *ngFor="let adrss of this.loginForm.controls.shipadrs.value; index as i">
+    <div class="row mt-2">
+        <div class="col-md-12">
+            <input class="form-control form-control-sm " [formControlName]="i" type="text" placeholder="shipping address"> 
+
+        </div>
+    </div>
+    <div *ngIf="submitted&&(!loginForm.controls.shipadrs.value||loginForm.controls.shipadrs.value.length==0||loginForm.controls.shipadrs.value[0]=='')"class="Error class "><small>enter shipadrss</small> </div>            
+
+</div>
+
+</div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+              <button type="submit" class="btn btn-primary btn-sm btn-block mt-2 ">Submit</button>      
+             </div>
+             </div>
+            </div>
+          
+          
+          </form>
+    </div>
+</div>

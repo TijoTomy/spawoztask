@@ -1,0 +1,30 @@
+<div >
+   <div class="product-container">
+       <div class="product-box card mb-2  pl-2" *ngFor="let product of productData" >
+           <div class="product-info">
+            <img [src]="product.image" class="product-image" alt="product image">
+            <!-- {{product.category}} -->
+            <div class="d-flex flex-column justify-content-center product-desc">
+                <h6> {{product.category}}</h6>
+                <p>{{product.title}}</p>
+                <div class=" produtbtn">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button class="btn btn-primary  btn-sm mr-2" (click)="selectProduct(product)">Description</button>
+                            <button class="btn btn-warning  btn-sm" (click)="addCart(product)">Add To Cart</button>
+    
+                           </div>
+                    </div>
+                   
+                      
+                </div>
+               
+            </div>
+          
+           </div>
+        
+
+       </div>
+      
+   </div> 
+</div>

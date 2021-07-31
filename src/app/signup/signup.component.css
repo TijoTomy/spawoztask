@@ -1,0 +1,28 @@
+.signuppage{
+    width: 100%;
+    height: 650px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.loginform{
+    width: 35%;
+    height: 620px;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: center; */
+    padding-top: 15px;
+    background-color: white;
+}
+.adressbtn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+small{
+    color:red;
+}
