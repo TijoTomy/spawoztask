@@ -17,7 +17,7 @@ public productData:any=[];
 this.getProducts()
   }
   selectProduct(product:any){
-    debugger
+    // debugger
     sessionStorage.setItem("selproduct",JSON.stringify(product))
     this.router.navigateByUrl('/product')
 
@@ -36,7 +36,7 @@ getProducts(){
 }
 addCart(product:any){
   let cartItem:any=[];
-  debugger
+  // debugger
   if(!localStorage.getItem('cart')){
     cartItem.push(product)
     localStorage.setItem('cart',JSON.stringify(cartItem))
